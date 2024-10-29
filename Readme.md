@@ -6,7 +6,7 @@ While not everybody knows it, Windows natively offers functionality similar to t
 
 This article aims to provide the reader with a **comprehensive guide** to the technical details and the underlying design decisions of process cloning on Windows and how they affect its usability. We will explore why most techniques for code injection via cloning will almost inevitably struggle with evading security products, yet other attack vectors like credential dumping might find their niche. There is a lot to cover, so let's dive right in!
 
-> **Disclaimer:** the system functions (alongside their behavior) described below is officially undocumented and subject to potential (though unlikely) change. We assume that the myriad of pitfalls described below already serves as a good reason why, but let's stress it out: please, don't rely on them in production code!
+> **Disclaimer:** the system functions (alongside their behavior) described below is officially undocumented and subject to potential (though unlikely) change. We assume that the myriad pitfalls described below already serve as a good reason why, but let's stress it out: please, don't rely on them in production code!
 
 # Recap: Process Creation
 
