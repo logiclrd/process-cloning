@@ -231,7 +231,7 @@ Because most of these operations use unexported variables and functions, manuall
 
 You can find the demo program that clones itself via `RtlCloneUserProcess` in the [dedicated section](https://github.com/huntandhackett/process-cloning/blob/master/2.RtlCloneUserProcess/main.c) of the repository.
 
-## The Myriads of Caveats
+## The Myriad Caveats
 
 Does it mean we are safe with `RtlCloneUserProcess`, then? Not even close. The primary factor determining whether the cloned code will execute correctly or crash dramatically is the **variety of OS facilities** it uses. On the one side of the scale, take programs that are single-threaded implementations of pure mathematical algorithms. Such examples are as compatible with cloning as they can be because the complete state of the memory is enough for them to continue operating without drawbacks. On the extreme opposite side, you can imagine a muli-threaded GUI application that uses hardware acceleration. Any of these properties is [problematic](https://www.microsoft.com/en-us/research/uploads/prod/2019/04/fork-hotos19.pdf) even when forking on Unix-like systems; combined, plus used on Windows, they are a recipe for disaster.
 
